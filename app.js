@@ -1,139 +1,61 @@
-// Object Oriented Programming
-// prototypal Inheritance
 
 
-// const dog = {
-// name: "Michael",
-// goodBoy: true,
-// gender: "girl",
-// food: "pedigree"
+  
 
 
+// var isMomHappy = false;
 
-// // };
+// // // Promise
+// // var willIGetNewPhone = new Promise(
+// //     function (resolve, reject) {
+// //         if (isMomHappy) {
+// //             var phone = {
+// //                 brand: 'Samsung',
+// //                 color: 'black'
+// //             };
+// //             resolve(phone); // fulfilled
+// //         } else {
+// //             // var reason = new Error('mom is not happy');
+// //             reject("mom is not happy"); // reject
+// //         }
 
+// //     }
+// // );
+// // console.log(willIGetNewPhone);
 
-// const dogTwo = {
-//     name: 'rocco',
-//     color: 'brown',
-//     walk: '4pm'
-   
-
-   
-// };
-// dogTwo.__proto__ = dog;
-
-// console.log(dog);
-// console.log(dogTwo);
-
-// console.log(dogTwo.goodBoy);
-// console.log(dogTwo.name);
-// console.log(dog.food);
-
-// dog.jump = '6'
-
-
-// //
-
-// function User(name){
-// this.name = name;
-//     //return this
-
-
-// }
-
-// let adam = new User('Adam');
-
-// console.log(adam.name);
-
-
-// let pete = new User('peter')
-
-// console.log(pete.name);
-
-
-// function NBAPlayer(name,team, threePointShooter){
-//     // this = {}
-//     this.name = name; 
-//     this.team = team;
-//     this. threePointShooter = threePointShooter; 
-
-//     // return this
-
-// }
+// let willIGetNewPhone = new Promise((resolve,reeject => {
+//     if (isMomHappy){
+//         const phone ={
+//             brand: 'iphone',
+//             color: 'red'
+//         }
+//     }else{
+//             reeject('NoPhone');
+//     })
+// })
 
 
 
 
-// this.intro = function(){
-//     console.log('Hi, my name is ' + this.name);
-//     // return is here
-// }
-
-
-// console.log(steph);
-
-
-
-// let steph = new NBAPlayer('steph Curry', 'warriors', true);
-// steph.intro();
-
-
-
-
-// function Games(name,type,goodGame){
-//     this.name = name; 
-//     this.type = type;
-//     this.goodGame = true
-
-
-// }
-// let game = new Games('zeld','adeventure',true);
-
-
-// class Car {
-//   constructor(year, make, model,color){
-//       this.year = year;
-//       this.make =  make;
-//       this.model = model; 
-//       this.color = color; 
-   
-
-
-
-//   }
-//   drive(){
-//       console.log('Vroom'); 
-
-//   }
-//   intro(){
-//       console.log('this car is a' + make + model);
-//   }
-
-// }
-
-
-
-//   let tesla = new Car('Tesla','Model s', 'red');
-//   console.log(tesla);
-//   tesla.intro();
-//   tesla.drive();
-
+//     willIGetNewPhone.then(result => {
+//     console.log(result);
+// })
 
 fetch('https://api.github.com/users/guess01325')
 .then(response => {
     return response.json
-    let githubUrl = data.url;
-  
-    let githubUsername = data.login;
+   
+    
+    let githubUsername = data.username;
     let githubName = data.name;
+    let githubUrl = data.url;
     
     class Githubprofile{
     
         constructor(username,name,url){
             this.username = username;
             this.name = name;
-            this.url = url;
+            this.githubUrl = url;
         }
         intro(){
             console.log(`My name is ${this.name} and my username is @${this.username}`);
@@ -142,19 +64,40 @@ fetch('https://api.github.com/users/guess01325')
 
 
   })
-  .then(data =>{
-
-    let otis = new Githubprofile(githubUsername,githubName,githubUrl);
-    console.log(otis);
-    otis.intro();
 
 
-  })
+  let otis = new Githubprofile(githubUsername,githubName,githubUrl);
+//   console.log(otis);
+//   otis.intro();
 
+
+
+async function printUsers() {
+
+    let otisEndpoint = 'https://api.github.com/users/guess01325';
+    let otis = await fetch(endpoint).then(res => response.json());
+    return response.json();
   
 
+}
+ printUsers();
+ // set up fetch uising await
+ // grab loginname 
+ // print the login name
 
 
 
+ async function printFacebook(){
+     
+     let facebookEndpoint = 'https://api.github.com/users/facebook';
+     let facebook = await fetch(facebookEndpoint).then(response => {
+         return response.json();
+     }
+     
+ }
+ 
 
 
+//   fetch(endpoint)
+//   .then(response => {
+// return response.json();
